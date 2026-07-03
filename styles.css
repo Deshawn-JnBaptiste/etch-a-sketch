@@ -1,0 +1,15 @@
+#gridContainer {
+    display: flex;
+    border: 1px solid black;
+    width: 408px;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.tile{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    flex-shrink: 0;
+    
+}
