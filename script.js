@@ -1,6 +1,8 @@
 const gridContainer = document.querySelector("#gridContainer");
 const gridSize = document.querySelector("#gridSize")
 const gridLabel = document.querySelector("#gridLabel")
+let mouseDown = false;
+
 createGrid(16)
 gridSize.value = 16;
 gridLabel.textContent = `${gridSize.value} x ${gridSize.value}`;
@@ -13,10 +15,18 @@ function createGrid(size) {
 
           for (let j = 1; j <= size; j++) {
           const tile = document.createElement("div")
-          tile.addEventListener("mouseenter", () =>  {
-               tile.style.backgroundColor = "blue";
-               tile.style.borderColor = "gray";
+          tile.addEventListener("mousedown", () =>  {
+               mouseDown = true;
           })
+          tile.addEventListener("mouseenter", () =>  {
+               if (mouseDown) {
+               tile.style.backgroundColor = "blue"
+               }
+          })
+          tile.addEventListener("mouseup",()=> {
+               mouseDown = false;
+          }) 
+
           tile.classList.add("tiles")
           tile.style.height = `${640/size}px`;
           tile.style.width = `${640/size}px`;
