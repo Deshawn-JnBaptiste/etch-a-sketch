@@ -1,4 +1,6 @@
-const gridContainer = document.querySelector("#gridContainer")
+const gridContainer = document.querySelector("#gridContainer");
+const gridSize = document.querySelector("#gridSize").value;
+
 
 for (let i = 1; i <= 16; i++) {
      const row = document.createElement("div")
@@ -15,4 +17,5 @@ for (let i = 1; i <= 16; i++) {
           row.appendChild(tile)
      }    
 }
+
 
