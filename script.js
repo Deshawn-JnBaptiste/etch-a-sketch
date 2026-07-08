@@ -1,6 +1,7 @@
 const gridContainer = document.querySelector("#gridContainer");
-const gridSize = document.querySelector("#gridSize")
-const gridLabel = document.querySelector("#gridLabel")
+const gridSize = document.querySelector("#gridSize");
+const gridLabel = document.querySelector("#gridLabel");
+const colourPicker = document.querySelector("#colourPicker");
 let mouseDown = false;
 
 createGrid(16)
@@ -22,7 +23,7 @@ function createGrid(size) {
           })
           tile.addEventListener("mouseover", () =>  {
                if (mouseDown) {
-               tile.style.backgroundColor = "blue"
+               tile.style.backgroundColor = `${colourPicker.value}`
                }
           })
           tile.addEventListener("mouseup",()=> {
