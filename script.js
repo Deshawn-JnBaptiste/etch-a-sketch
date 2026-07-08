@@ -7,38 +7,24 @@ const rainbowButton = document.querySelector("#rainbowButton")
 const eraserButton = document.querySelector("#eraserButton")
 const clearButton = document.querySelector("#clearButton")
 
-let colourButtonPressed = true; 
-let rainbowButtonPressed = false;
-let eraserButtonPressed = false;
+let currentTool = "colour";
 let clearButtonPressed = false;
 let mouseDown = false;
 
 colourPicker.addEventListener("click", ()=> {
-     colourButtonPressed = true;
-     rainbowButtonPressed = false;
-     eraserButtonPressed = false;
-     clearButtonPressed = false;
+     currentTool = "colour";
 })
 
 colourButton.addEventListener("click", () => {
-     colourButtonPressed = true;
-     rainbowButtonPressed = false;
-     eraserButtonPressed = false;
-     clearButtonPressed = false;
+     currentTool = "colour";
 })
 
 rainbowButton.addEventListener("click", () => {
-     rainbowButtonPressed = true;
-     colourButtonPressed = false;
-     eraserButtonPressed = false;
-     clearButtonPressed = false;
+     currentTool = "rainbow";
 })
 
 eraserButton.addEventListener("click", () => {
-     eraserButtonPressed = true;
-     colourButtonPressed = false;
-     rainbowButtonPressed = false;
-     clearButtonPressed = false;
+     currentTool = "eraser";
 })
 
 clearButton.addEventListener("click", () => {
@@ -55,13 +41,13 @@ gridSize.addEventListener("input", ( )=> {
 
 //Button Functions
 function changeColour(tile) {
-     if (colourButtonPressed) {
+     if (currentTool == "colour") {
           tile.style.backgroundColor = `${colourPicker.value}`;
      }
 }
 
 function rainbowMode(tile) {
-     if (rainbowButtonPressed) {
+     if (currentTool == "rainbow") {
           const red = Math.floor(Math.random() * 256);
           const green = Math.floor(Math.random() * 256);
           const blue = Math.floor(Math.random() * 256);
@@ -70,7 +56,7 @@ function rainbowMode(tile) {
 }
 
 function eraserMode(tile) {
-     if (eraserButtonPressed) {
+     if (currentTool == "eraser") {
           tile.style.backgroundColor = "white";
      }
 }
