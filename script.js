@@ -15,10 +15,12 @@ function createGrid(size) {
 
           for (let j = 1; j <= size; j++) {
           const tile = document.createElement("div")
-          tile.addEventListener("mousedown", () =>  {
+
+          tile.addEventListener("mousedown", (event) =>  {
+               event.preventDefault()
                mouseDown = true;
           })
-          tile.addEventListener("mouseenter", () =>  {
+          tile.addEventListener("mouseover", () =>  {
                if (mouseDown) {
                tile.style.backgroundColor = "blue"
                }
