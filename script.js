@@ -7,12 +7,18 @@ const rainbowButton = document.querySelector("#rainbowButton")
 const eraserButton = document.querySelector("#eraserButton")
 const clearButton = document.querySelector("#clearButton")
 
-let colourButtonPressed = false; 
+let colourButtonPressed = true; 
 let rainbowButtonPressed = false;
 let eraserButtonPressed = false;
 let clearButtonPressed = false;
 let mouseDown = false;
 
+colourPicker.addEventListener("click", ()=> {
+     colourButtonPressed = true;
+     rainbowButtonPressed = false;
+     eraserButtonPressed = false;
+     clearButtonPressed = false;
+})
 
 colourButton.addEventListener("click", () => {
      colourButtonPressed = true;
@@ -37,9 +43,17 @@ eraserButton.addEventListener("click", () => {
 
 clearButton.addEventListener("click", () => {
      clearButtonPressed = true;
-     colourButtonPressed = false;
      rainbowButtonPressed = false;
      eraserButtonPressed = false;
+     clearGrid()
+     colourButtonPressed = true;
+})
+
+gridSize.addEventListener("input", ( )=> {
+     const allRows = document.querySelectorAll(".rows")
+     allRows.forEach(item => item.remove())
+     gridLabel.textContent = `${gridSize.value} x ${gridSize.value}`;
+     createGrid(gridSize.value)
 })
 
 //Button Functions
@@ -59,21 +73,20 @@ function rainbowMode(tile) {
 
 }
 
-function eraserMode() {
+function eraserMode(tile) {
      if (eraserButtonPressed) {
-          tile.style.backgroundColor = `white`;
+          tile.style.backgroundColor = "white";
      }
 
 }
 
 function clearGrid() {
      if (clearButtonPressed){
-          createGrid(size)
+     const allRows = document.querySelectorAll(".rows")
+     allRows.forEach(item => item.remove())
+     createGrid(gridSize.value)
      }
 }
-
-
-
 
 function createGrid(size) {
      for (let i = 1; i <= size; i++) {
@@ -91,7 +104,9 @@ function createGrid(size) {
           //Decides what the tiles look like
           tile.addEventListener("mouseover", () =>  {
                if (mouseDown) {
-               tile.style.backgroundColor = `${colourPicker.value}`
+                    changeColour(tile)
+                    rainbowMode(tile)
+                    eraserMode(tile)
                }
           })
           tile.addEventListener("mouseup",()=> {
@@ -105,26 +120,10 @@ function createGrid(size) {
           }    
      }
 }
-
-
-
-
-
-
-
-
-
-
+//On Page Load
 createGrid(16)
 gridSize.value = 16;
 gridLabel.textContent = `${gridSize.value} x ${gridSize.value}`;
-
-gridSize.addEventListener("input", ( )=> {
-     const allRows = document.querySelectorAll(".rows")
-     allRows.forEach(item => item.remove())
-     gridLabel.textContent = `${gridSize.value} x ${gridSize.value}`;
-     createGrid(gridSize.value)
-})
 
 
 
