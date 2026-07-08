@@ -2,6 +2,9 @@ const gridContainer = document.querySelector("#gridContainer");
 const gridSize = document.querySelector("#gridSize");
 const gridLabel = document.querySelector("#gridLabel");
 const colourPicker = document.querySelector("#colourPicker");
+const rainbowButton = document.querySelector("#rainbowButton")
+const eraserButton = document.querySelector("#eraserButton")
+const clearButton = document.querySelector("#clearButton")
 let mouseDown = false;
 
 createGrid(16)
