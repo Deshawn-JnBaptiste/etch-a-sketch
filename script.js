@@ -8,7 +8,6 @@ const eraserButton = document.querySelector("#eraserButton")
 const clearButton = document.querySelector("#clearButton")
 
 let currentTool = "colour";
-let clearButtonPressed = false;
 let mouseDown = false;
 
 colourPicker.addEventListener("click", ()=> {
@@ -28,8 +27,9 @@ eraserButton.addEventListener("click", () => {
 })
 
 clearButton.addEventListener("click", () => {
-     clearButtonPressed = true;
-     clearGrid()
+     const allRows = document.querySelectorAll(".rows")
+     allRows.forEach(item => item.remove())
+     createGrid(gridSize.value)
 })
 
 gridSize.addEventListener("input", ( )=> {
@@ -58,14 +58,6 @@ function rainbowMode(tile) {
 function eraserMode(tile) {
      if (currentTool == "eraser") {
           tile.style.backgroundColor = "white";
-     }
-}
-
-function clearGrid() {
-     if (clearButtonPressed){
-     const allRows = document.querySelectorAll(".rows")
-     allRows.forEach(item => item.remove())
-     createGrid(gridSize.value)
      }
 }
 
