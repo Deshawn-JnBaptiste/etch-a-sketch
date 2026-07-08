@@ -43,10 +43,7 @@ eraserButton.addEventListener("click", () => {
 
 clearButton.addEventListener("click", () => {
      clearButtonPressed = true;
-     rainbowButtonPressed = false;
-     eraserButtonPressed = false;
      clearGrid()
-     colourButtonPressed = true;
 })
 
 gridSize.addEventListener("input", ( )=> {
@@ -70,14 +67,12 @@ function rainbowMode(tile) {
           const blue = Math.floor(Math.random() * 256);
           tile.style.backgroundColor = `rgb(${red}, ${green}, ${blue}`;
      }
-
 }
 
 function eraserMode(tile) {
      if (eraserButtonPressed) {
           tile.style.backgroundColor = "white";
      }
-
 }
 
 function clearGrid() {
@@ -124,9 +119,3 @@ function createGrid(size) {
 createGrid(16)
 gridSize.value = 16;
 gridLabel.textContent = `${gridSize.value} x ${gridSize.value}`;
-
-
-
-
-
-
