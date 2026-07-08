@@ -42,13 +42,35 @@ clearButton.addEventListener("click", () => {
      eraserButtonPressed = false;
 })
 
+//Button Functions
+function changeColour(tile) {
+     if (colourButtonPressed) {
+          tile.style.backgroundColor = `${colourPicker.value}`;
+     }
+}
 
+function rainbowMode(tile) {
+     if (rainbowButtonPressed) {
+          const red = Math.floor(Math.random() * 256);
+          const green = Math.floor(Math.random() * 256);
+          const blue = Math.floor(Math.random() * 256);
+          tile.style.backgroundColor = `rgb(${red}, ${green}, ${blue}`;
+     }
 
+}
 
+function eraserMode() {
+     if (eraserButtonPressed) {
+          tile.style.backgroundColor = `white`;
+     }
 
+}
 
-
-
+function clearGrid() {
+     if (clearButtonPressed){
+          createGrid(size)
+     }
+}
 
 
 
