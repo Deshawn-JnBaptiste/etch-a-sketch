@@ -27,16 +27,13 @@ eraserButton.addEventListener("click", () => {
 })
 
 clearButton.addEventListener("click", () => {
-     const allRows = document.querySelectorAll(".rows")
-     allRows.forEach(item => item.remove())
-     createGrid(gridSize.value)
+     resetGrid()
 })
 
 gridSize.addEventListener("input", ( )=> {
-     const allRows = document.querySelectorAll(".rows")
-     allRows.forEach(item => item.remove())
+     resetGrid()
      gridLabel.textContent = `${gridSize.value} x ${gridSize.value}`;
-     createGrid(gridSize.value)
+
 })
 
 //Button Functions
@@ -93,6 +90,13 @@ function createGrid(size) {
           }    
      }
 }
+
+function resetGrid() {
+     const allRows = document.querySelectorAll(".rows")
+     allRows.forEach(item => item.remove())
+     createGrid(gridSize.value)
+}
+
 //On Page Load
 createGrid(16)
 gridSize.value = 16;
