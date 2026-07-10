@@ -2,20 +2,20 @@ const gridContainer = document.querySelector("#gridContainer");
 const gridSize = document.querySelector("#gridSize");
 const gridLabel = document.querySelector("#gridLabel");
 const colourPicker = document.querySelector("#colourPicker");
-const colourButton = document.querySelector("#colourButton")
+const brushButton = document.querySelector("#brushButton")
 const rainbowButton = document.querySelector("#rainbowButton")
 const eraserButton = document.querySelector("#eraserButton")
 const clearButton = document.querySelector("#clearButton")
 
-let currentTool = "colour";
+let currentTool = "brush";
 let mouseDown = false;
 
 colourPicker.addEventListener("click", ()=> {
-     currentTool = "colour";
+     currentTool = "brush";
 })
 
-colourButton.addEventListener("click", () => {
-     currentTool = "colour";
+brushButton.addEventListener("click", () => {
+     currentTool = "brush";
 })
 
 rainbowButton.addEventListener("click", () => {
@@ -37,8 +37,8 @@ gridSize.addEventListener("input", ( )=> {
 })
 
 //Button Functions
-function changeColour(tile) {
-     if (currentTool == "colour") {
+function brushMode(tile) {
+     if (currentTool == "brush") {
           tile.style.backgroundColor = `${colourPicker.value}`;
      }
 }
@@ -70,14 +70,14 @@ function createGrid(size) {
           tile.addEventListener("mousedown", (event) =>  {
                event.preventDefault()
                mouseDown = true;
-                    changeColour(tile)
+                    brushMode(tile)
                     rainbowMode(tile)
                     eraserMode(tile)
           })
           
           tile.addEventListener("mouseover", () =>  {
                if (mouseDown) {
-                    changeColour(tile)
+                    brushMode(tile)
                     rainbowMode(tile)
                     eraserMode(tile)
                }
