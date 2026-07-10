@@ -70,8 +70,11 @@ function createGrid(size) {
           tile.addEventListener("mousedown", (event) =>  {
                event.preventDefault()
                mouseDown = true;
+                    changeColour(tile)
+                    rainbowMode(tile)
+                    eraserMode(tile)
           })
-          //Decides what the tiles look like
+          
           tile.addEventListener("mouseover", () =>  {
                if (mouseDown) {
                     changeColour(tile)
