@@ -7,23 +7,34 @@ const rainbowButton = document.querySelector("#rainbowButton")
 const eraserButton = document.querySelector("#eraserButton")
 const clearButton = document.querySelector("#clearButton")
 
+const toolButtons = [
+    brushButton,
+    rainbowButton,
+    eraserButton
+];
+//Default States
 let currentTool = "brush";
 let mouseDown = false;
 
+
 colourPicker.addEventListener("click", ()=> {
      currentTool = "brush";
+     setActiveButton(brushButton);
 })
 
 brushButton.addEventListener("click", () => {
      currentTool = "brush";
+      setActiveButton(brushButton);
 })
 
 rainbowButton.addEventListener("click", () => {
      currentTool = "rainbow";
+     setActiveButton(rainbowButton);
 })
 
 eraserButton.addEventListener("click", () => {
      currentTool = "eraser";
+     setActiveButton(eraserButton);
 })
 
 clearButton.addEventListener("click", () => {
@@ -56,6 +67,14 @@ function eraserMode(tile) {
      if (currentTool == "eraser") {
           tile.style.backgroundColor = "white";
      }
+}
+
+function setActiveButton(button) {
+    toolButtons.forEach(btn => {
+        btn.classList.remove("activeButton");
+    });
+
+    button.classList.add("activeButton");
 }
 
 function createGrid(size) {
@@ -104,3 +123,4 @@ function resetGrid() {
 createGrid(16)
 gridSize.value = 16;
 gridLabel.textContent = `${gridSize.value} x ${gridSize.value}`;
+setActiveButton(brushButton);

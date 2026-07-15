@@ -58,6 +58,13 @@ input, button {
     
 }
 
+.activeButton {
+    background-color: black;
+    color: white;
+}
+
+
+
 #brushOptions{
     display: flex;
     justify-content:space-evenly;
