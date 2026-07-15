@@ -1,116 +1,119 @@
-body{
-    margin: 0;
-}
-h1 {
-    text-align: center;
-    font-size: 70px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bolder;
-    margin: 0;
-}
+    body{
+        margin: 0;
+        background-color: #8CC0EB;
+    }
+    h1 {
+        text-align: center;
+        font-size: 70px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin: 0;
+        margin-top: 20px;
+        color: #F9F6C4;
+    }
 
-input, button {
-    cursor: pointer;
-}
+    input, button {
+        cursor: pointer;
+    }
 
-#gridContainer {
-    display: flex;
-    flex-direction: column;
-    width: 640px;
-    height: 640px;
-    margin: auto;
-    margin-top: 10px;
-    box-shadow: 0px 0px 8px 5px rgba(190, 212, 216, 0.2);
-}
+    #gridContainer {
+        display: flex;
+        flex-direction: column;
+        width: 640px;
+        height: 640px;
+        margin: auto;
+        margin-top: 10px;
+        box-shadow: 0px 0px 8px 5px rgba(190, 212, 216, 0.2);
+        background-color: white;
+        border-radius: 5px;
+    }
 
-.rows{
-    display: flex;
-}
+    .rows{
+        display: flex;
+    }
 
-.tiles{
-    width: 40px;
-    height: 40px;
-    box-sizing: border-box;
-}
-
-
-#options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
-}
-.buttonStyling{
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    height: 40px;
-    width: 130px;
-    box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
-    font-size: 15px;
-}
-.buttonStyling:hover {
-    background-color: black;
-    color: white;
-    
-}
-
-.activeButton {
-    background-color: black;
-    color: white;
-}
+    .tiles{
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+    }
 
 
+    #options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        gap: 10px;
+    }
+    .buttonStyling{
+        border-radius: 5px;
+        background-color: #BFDDF0;
+        color: #1F2937;
+        height: 40px;
+        width: 130px;
+        box-sizing: border-box;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bolder;
+        font-size: 15px;
+    }
+    .buttonStyling:hover {
+        background-color: #1F2937;
+        color: #BFDDF0;
+        
+    }
 
-#brushOptions{
-    display: flex;
-    justify-content:space-evenly;
-}
+    .activeButton {
+        background-color: #1F2937;
+        color: #BFDDF0;
+    }
 
-#colourPicker {
-    width: 40px;
-    height: 40px;
-    border: none;
-    padding: 0;
-    background: none;
-    margin-right: 5px;
-    filter: drop-shadow(0 0 8px rgba(190, 212, 216, 0.8));
-}
+    #brushOptions{
+        display: flex;
+        justify-content:space-evenly;
+    }
 
-#colourPicker::-webkit-color-swatch-wrapper {
-    padding: 0;
-}
+    #colourPicker {
+        width: 40px;
+        height: 40px;
+        border: none;
+        padding: 0;
+        background: none;
+        margin-right: 5px;
+        filter: drop-shadow(0 0 8px rgba(190, 212, 216, 0.8));
+    }
 
-#colourPicker::-webkit-color-swatch {
-    border: none;
-    border-radius: 50%;
-}
+    #colourPicker::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    #colourPicker::-webkit-color-swatch {
+        border: none;
+        border-radius: 50%;
+    }
 
 
-#gridSizeContainer{
-    display: flex;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
-    font-size: 15px;
-    flex-direction: column;
-}
+    #gridSizeContainer{
+        display: flex;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bolder;
+        font-size: 15px;
+        flex-direction: column;
+    }
 
-#gridSize{
-    margin: 8px;
-    appearance: none;
-    width: 100%;
-    height: 2px;
-    background: black;
-    accent-color: black;
-    outline: none;
-}
-#gridLabel {
-    margin: 0;
-}
+    #gridSize{  
+        margin: 8px;
+        appearance: none;
+        width: 100%;
+        height: 2px;
+        background:#1F2937;
+        accent-color: #1F2937;
+        outline: none;
+    }
+    #gridLabel {
+        margin: 0;
+        color: #1F2937;
+    }
 
 
 
